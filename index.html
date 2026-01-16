@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <script src="Copy of jquery-3.7.1.min.js"></script>
+    <style>
+        div{
+            width: 350px;
+            background-color: aqua;
+            padding: 20px;
+            border-radius: 5px;
+            position: absolute;
+        }
+        .red li{
+            color: red;
+        }
+
+
+
+
+
+    </style>
+    <!-- /////////////////////////////////////////////////////// -->
+    <script>
+        $(document).ready(function(){
+            var i = "+=50px";
+            var t = 100;
+
+            $("#btn1").click(function(){
+                $("#btn2").fadeIn().animate({width:i},t,function(){
+                    $("#btn3").fadeIn().animate({width:i},t,function(){
+                        $("#btn4").fadeIn().animate({width:i},t,function(){
+                            $("#btn5").fadeIn().animate({width:i},t,function(){
+                                $("#btn6").fadeIn().animate({width:i},t,function(){
+                                    $("#btn7").fadeIn().animate({width:i},t);
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+
+
+            $("#btn4").click(function(){
+                $("#lbl1").animate({fontSize:'80px',opacity:'0.2'},2000,function(){
+                    $("#lbl1").animate({fontSize:'40px',opacity:'1'},2000)
+                });
+            });
+            
+            $("#btn2").click(function(){
+                $("#frm").animate({left:'+=40px',top:'+=40px'},2000);
+             
+            });
+            $("#btn3").click(function(){
+                $("#frm").animate({opacity:'0.3',},200)
+                $("#frm").animate({opacity:'1',},200)
+                 $("#frm").animate({opacity:'0.3',},200)
+                $("#frm").animate({opacity:'1',},200)
+                 $("#frm").animate({opacity:'0.3',},200)
+                $("#frm").animate({opacity:'1',},200);
+             
+            });
+              $("#btn5").click(function(){
+                $("img").attr("src","f2.jpg");
+             
+            });
+                $("#btn6").click(function(){
+                 $("#lbl1").after("Hello");
+             
+            });
+                $("#btn7").click(function(){
+                 $("#pp").after("<input type='text'/>");
+             
+            });
+            var x=1;
+            $("#btn8").click(function(){
+                    
+                $("#pp").before("<button>new"  + x  +  "</button>");
+                x+=1;
+
+             
+            });
+                  $("#btn9").click(function(){
+                 //$("#frm").append("<input type='text'/>");
+                  $("#frm").prepend("<input type='text'/>");
+             
+            });
+                  $("#btn10").click(function(){
+                 // حذف محتويات الدف//$("#frm").empty();
+                  $("#frm").remove();
+             
+            });
+                    $("#btn11").click(function(){
+                 // حذف محتويات الدف//$("#frm").empty();
+                  var x=$("#tt").val();
+                 $("#yy").append("<li>"+ x +"</li>");
+             
+            });
+                     $("#btn12").click(function(){
+               
+                  $("#lbl1").append(" ahmed ");
+             
+            });
+                      $("#btn13").click(function(){
+               
+                  $("#yy").toggleClass("red");
+             
+            });
+
+
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn1" style="width: 100px;">Button1</button>
+    <button id="btn2" style="width: 100px;display: none;">Button2</button>
+    <button id="btn3" style="width: 100px;display: none;">Button3</button>
+    <button id="btn4" style="width: 100px;display: none;">Off</button>
+    <button id="btn5" style="width: 100px;display: none;"> تغيير الصور</button>
+    <button id="btn6" style="width: 100px;display: none;"> إظهار أدوات</button>
+    <button id="btn7" style="width: 100px;display: none;"> إظهار تكست بوكس</button>
+    <button id="btn8" style="width: 100px;"> إظهار أزرار</button>
+    <button id="btn9" style="width: 100px;">  تكست دف</button>
+    <button id="btn10" style="width: 100px;"> حذف الدف</button>
+    <button id="btn11" style="width: 100px;">  add items</button>
+    <button id="btn12" style="width: 100px;">  add text</button>
+    <button id="btn13" style="width: 100px;">  red</button>
+    <hr>
+    <img src="f.jpg"/>
+    <img src="f.jpg"/>
+    <img src="f.jpg"/>
+    
+    <h1 id="lbl1">text here</h1>
+ 
+    <div id="frm">
+        <label>full name</label>
+        <input type="text" id="tt" placeholder="your name ..">
+        <button>submit</button>
+    </div>
+    <hr >
+    <button id="pp" style="width: 100px;"> Toggle</button>
+    <br>
+     <br>
+     <br>
+
+    
+    <ol id="yy" class="red">
+        <li>ahmed</li>
+        <li>ali</li>
+        <li>hend</li>
+        <li>amr</li>
+
+    </ol>
+
+
+</body>
+
+
+</html>
